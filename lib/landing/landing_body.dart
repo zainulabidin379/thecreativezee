@@ -75,7 +75,7 @@ class LandingBody extends StatelessWidget {
           StreamBuilder<List<ShowcaseAppModel>>(
               stream: FirebaseFirestore.instance
                   .collection("mobileApps")
-                  .orderBy("priority")
+                  .orderBy("priority", descending: true)
                   .snapshots()
                   .map((event) => event.docs
                       .map((e) => ShowcaseAppModel.fromMap(e))

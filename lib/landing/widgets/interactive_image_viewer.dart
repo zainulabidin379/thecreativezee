@@ -85,8 +85,20 @@ class _InteractiveImageViewerState extends State<InteractiveImageViewer> {
                     currentPage = page;
                   });
                 },
-                children:
-                    List.generate(widget.image.length, (index) => Image.network(widget.image[index]))),
+                children: List.generate(
+                    widget.image.length,
+                    (index) => Image.network(
+                          widget.image[index],
+                          loadingBuilder: (BuildContext context, Widget child,
+                              ImageChunkEvent? loadingProgress) {
+                            if (loadingProgress == null) return child;
+                            return const Center(
+                              child: CircularProgressIndicator(
+                                color: Colors.white70,
+                              ),
+                            );
+                          },
+                        ))),
           ),
           Padding(
             padding: const EdgeInsets.only(bottom: 35),

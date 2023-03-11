@@ -16,6 +16,18 @@ class SourceAwareImage extends StatelessWidget {
     return isNetworkImage
         ? Image.network(
             image,
+            loadingBuilder: (BuildContext context, Widget child,
+                ImageChunkEvent? loadingProgress) {
+              if (loadingProgress == null) return child;
+              return const SizedBox(
+                height: 200,
+                child: Center(
+                  child: CircularProgressIndicator(
+                    color: Colors.white54,
+                  ),
+                ),
+              );
+            },
           )
         : Image.asset(
             image,
