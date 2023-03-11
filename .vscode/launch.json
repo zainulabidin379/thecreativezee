@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "kamranbekirovcom-website",
+            "name": "thecreativezee-website",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "kamranbekirovcom-website (profile mode)",
+            "name": "thecreativezee-website (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "kamranbekirovcom-website (release mode)",
+            "name": "thecreativezee-website (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

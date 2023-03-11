@@ -18,5 +18,6 @@ abstract class AppConstants {
   static const facebookProfileURL = 'https://www.facebook.com/the.creative.zee';
   static const eMail = 'mailto:thecreativezee@gmail.com';
   static const flutterWebSiteURL = 'https://flutter.dev';
-  static const openSourceRepoURL = 'https://github.com/zainulabidin379';
+  static const openSourceRepoURL =
+      'https://github.com/zainulabidin379/web-portfolio';
 }
