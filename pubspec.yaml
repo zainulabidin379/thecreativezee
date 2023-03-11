@@ -1,0 +1,42 @@
+name: app
+description: A new Flutter project.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.2 <3.0.0'
+
+dependencies:
+  bubble_tab_indicator: ^0.1.6
+  cached_network_image: ^3.2.3
+  carousel_slider: ^4.2.1
+  cloud_firestore: ^4.4.4
+  firebase_core: ^2.7.1
+  firebase_storage: ^11.0.15
+  flutter:
+    sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
+  font_awesome_flutter: ^10.2.1
+  responsive_framework: ^0.2.0
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+
+  fonts:
+    - family: Ubuntu
+      fonts:
+        - asset: assets/fonts/Ubuntu/Ubuntu-Bold.ttf
+        - asset: assets/fonts/Ubuntu/Ubuntu-Medium.ttf
+        - asset: assets/fonts/Ubuntu/Ubuntu-Regular.ttf
+        - asset: assets/fonts/Ubuntu/Ubuntu-Light.ttf
