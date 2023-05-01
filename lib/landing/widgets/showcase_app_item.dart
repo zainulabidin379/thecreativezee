@@ -128,14 +128,30 @@ class _ShowcaseAppItemState extends State<ShowcaseAppItem> {
   }
 
   Widget _buildAppName() {
-    return Text(
-      widget.app.name,
-      style: const TextStyle(
-        fontSize: 18.0,
-        fontWeight: FontWeight.w500,
-        color: Colors.white,
-        letterSpacing: 1.4,
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          widget.app.name,
+          style: const TextStyle(
+            fontSize: 20.0,
+            fontWeight: FontWeight.w500,
+            color: Colors.white,
+            letterSpacing: 1.4,
+          ),
+        ),
+        const SizedBox(
+          height: 5,
+        ),
+        Text(
+          widget.app.topic,
+          style: const TextStyle(
+            fontSize: 14.0,
+            color: Colors.white54,
+            letterSpacing: 1.2,
+          ),
+        ),
+      ],
     );
   }
 }
