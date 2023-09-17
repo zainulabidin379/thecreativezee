@@ -14,8 +14,7 @@ abstract class AppConstants {
   static const gitHubProfileURL = 'https://github.com/zainulabidin379';
   static const linkedInProfileURL =
       'https://linkedin.com/in/zain-ul-abidin-782b2219a';
-  static const instagramProfileURL = 'https://instagram.com/zayni_379';
-  static const facebookProfileURL = 'https://www.facebook.com/the.creative.zee';
+  static const whatsappURL = 'https://wa.me/923188334699';
   static const eMail = 'mailto:thecreativezee@gmail.com';
   static const flutterWebSiteURL = 'https://flutter.dev';
   static const openSourceRepoURL =
