@@ -1,6 +1,6 @@
+import 'package:app/landing/landing_screen.dart';
 import 'package:app/utilities/app_constants.dart';
 import 'package:app/utilities/url_launcher.dart';
-import 'package:app/landing/landing_screen.dart';
 import 'package:flutter/material.dart';
 
 class ScrollUpIndicator extends StatefulWidget {
@@ -100,9 +100,9 @@ class _ScrollUpIndicatorState extends State<ScrollUpIndicator> {
         launchUrl(AppConstants.flutterWebSiteURL);
       },
       behavior: HitTestBehavior.translucent,
-      child: Row(
+      child: const Row(
         mainAxisSize: MainAxisSize.min,
-        children: const [
+        children: [
           SizedBox(width: 24.0),
           Text(
             'BUILT\nWITH',
