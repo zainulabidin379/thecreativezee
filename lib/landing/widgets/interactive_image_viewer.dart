@@ -1,5 +1,6 @@
 import 'package:app/landing/landing_screen.dart';
 import 'package:app/utilities/custom_scroll_behavior.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class InteractiveImageViewer extends StatefulWidget {
@@ -18,7 +19,6 @@ class InteractiveImageViewer extends StatefulWidget {
 
 class _InteractiveImageViewerState extends State<InteractiveImageViewer> {
   late final TransformationController _transformationController;
-  late TapDownDetails _doubleTapDetails;
   final PageController pageController = PageController(initialPage: 0);
   int currentPage = 0;
 
@@ -67,7 +67,9 @@ class _InteractiveImageViewerState extends State<InteractiveImageViewer> {
         actions: const [
           CircleAvatar(
             backgroundColor: primaryColor,
-            child: CloseButton(),
+            child: CloseButton(
+              color: Colors.white,
+            ),
           ),
           SizedBox(width: 24.0),
         ],
@@ -87,17 +89,18 @@ class _InteractiveImageViewerState extends State<InteractiveImageViewer> {
                 },
                 children: List.generate(
                     widget.image.length,
-                    (index) => Image.network(
-                          widget.image[index],
-                          loadingBuilder: (BuildContext context, Widget child,
-                              ImageChunkEvent? loadingProgress) {
-                            if (loadingProgress == null) return child;
-                            return const Center(
-                              child: CircularProgressIndicator(
-                                color: Colors.white70,
-                              ),
-                            );
-                          },
+                    (index) => CachedNetworkImage(
+                          imageUrl: widget.image[index],
+                          imageBuilder: (context, imageProvider) => Container(
+                            height: 1940,
+                            width: 970,
+                            decoration: BoxDecoration(image: DecorationImage(image: imageProvider)),
+                          ),
+                          progressIndicatorBuilder: (context, url, progress) => const Center(
+                            child: CircularProgressIndicator(
+                              color: Colors.white70,
+                            ),
+                          ),
                         ))),
           ),
           Padding(
@@ -110,20 +113,5 @@ class _InteractiveImageViewerState extends State<InteractiveImageViewer> {
         ],
       ),
     );
-  }
-
-  void _handleDoubleTapDown(TapDownDetails details) {
-    _doubleTapDetails = details;
-  }
-
-  void _handleDoubleTap() {
-    if (_transformationController.value != Matrix4.identity()) {
-      _transformationController.value = Matrix4.identity();
-    } else {
-      final position = _doubleTapDetails.localPosition;
-      _transformationController.value = Matrix4.identity()
-        ..translate(-position.dx, -position.dy)
-        ..scale(2.0);
-    }
   }
 }

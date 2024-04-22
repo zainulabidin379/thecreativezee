@@ -1,10 +1,10 @@
+import 'package:app/landing/landing_screen.dart';
+import 'package:app/landing/widgets/external_link_button.dart';
 import 'package:app/landing/widgets/interactive_image_viewer.dart';
 import 'package:app/landing/widgets/source_aware_image.dart';
 import 'package:app/utilities/showcase_app_model.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:app/landing/landing_screen.dart';
-import 'package:app/landing/widgets/external_link_button.dart';
 
 class ShowcaseAppItem extends StatefulWidget {
   final ShowcaseAppModel app;
@@ -31,11 +31,7 @@ class _ShowcaseAppItemState extends State<ShowcaseAppItem> {
         decoration: BoxDecoration(
           boxShadow: _hovered
               ? [
-                  const BoxShadow(
-                      color: Colors.black38,
-                      offset: Offset(0, 0),
-                      blurRadius: 10,
-                      spreadRadius: 8),
+                  const BoxShadow(color: Colors.black38, offset: Offset(0, 0), blurRadius: 10, spreadRadius: 8),
                 ]
               : null,
         ),
