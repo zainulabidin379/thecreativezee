@@ -7,8 +7,7 @@ class AnimatedBackgroundImage extends StatefulWidget {
   const AnimatedBackgroundImage(this.scrollController, {super.key});
 
   @override
-  State<AnimatedBackgroundImage> createState() =>
-      _AnimatedBackgroundImageState();
+  State<AnimatedBackgroundImage> createState() => _AnimatedBackgroundImageState();
 }
 
 class _AnimatedBackgroundImageState extends State<AnimatedBackgroundImage> {
