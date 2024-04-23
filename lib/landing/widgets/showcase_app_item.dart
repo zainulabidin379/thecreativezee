@@ -49,6 +49,7 @@ class _ShowcaseAppItemState extends State<ShowcaseAppItem> {
                   pageBuilder: (_, __, ___) {
                     return InteractiveImageViewer(
                       image: widget.app.image,
+                      name: widget.app.name,
                       isNetworkImage: widget.app.isNetworkImage,
                     );
                   },

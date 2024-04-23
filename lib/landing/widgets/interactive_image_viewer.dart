@@ -4,12 +4,14 @@ import 'package:flutter/material.dart';
 
 class InteractiveImageViewer extends StatelessWidget {
   final List image;
+  final String name;
   final bool isNetworkImage;
 
   const InteractiveImageViewer({
     required this.image,
     required this.isNetworkImage,
     super.key,
+    required this.name,
   });
 
   @override
@@ -19,6 +21,16 @@ class InteractiveImageViewer extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: primaryColor,
+        title: Text(
+          name,
+          style: const TextStyle(
+            fontSize: 20.0,
+            fontWeight: FontWeight.w500,
+            color: Colors.white,
+            letterSpacing: 1.4,
+          ),
+        ),
+        centerTitle: false,
         actions: const [
           CircleAvatar(
             backgroundColor: primaryColor,
