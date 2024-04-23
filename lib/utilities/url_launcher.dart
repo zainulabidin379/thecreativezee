@@ -1,4 +1,5 @@
 // OK, just trying something new :)
+// ignore: avoid_web_libraries_in_flutter
 import 'dart:js' as js;
 
 void launchUrl(String url, {bool newTab = true}) {
