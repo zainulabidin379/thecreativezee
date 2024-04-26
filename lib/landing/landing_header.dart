@@ -1,10 +1,9 @@
-import 'package:app/landing/widgets/delayed_widget.dart';
-import 'package:app/utilities/app_constants.dart';
 import 'package:app/landing/landing_screen.dart';
 import 'package:app/landing/widgets/animated_background_image.dart';
+import 'package:app/landing/widgets/delayed_widget.dart';
 import 'package:app/landing/widgets/social_media_buttons.dart';
+import 'package:app/utilities/app_constants.dart';
 import 'package:app/utilities/diagonal_path_clipper.dart';
-import 'package:app/utilities/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -73,10 +72,6 @@ class LandingHeader extends StatelessWidget {
         const Condition.largerThan(name: TABLET, value: 16.0),
       ],
     ).value;
-
-    // Motto text alignment: when Desktop = start, when Mobile and Tablet = center.
-    final mottoTextAlignment =
-        context.isDesktop ? TextAlign.start : TextAlign.center;
 
     // Max width of centered view when Mobile = 602, Tablet = 800, when Desktop = 1200
     final maxWidth = ResponsiveValue<double>(
@@ -150,7 +145,7 @@ class LandingHeader extends StatelessWidget {
             from: DelayFrom.top,
             child: SelectableText(
               AppConstants.landingMotto,
-              textAlign: mottoTextAlignment,
+              textAlign: TextAlign.start,
               style: TextStyle(
                 fontSize: mottoSize,
                 fontWeight: FontWeight.w400,

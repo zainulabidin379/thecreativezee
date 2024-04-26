@@ -69,7 +69,6 @@ class _ShowcaseAppItemState extends State<ShowcaseAppItem> {
         children: [
           SourceAwareImage(
             image: widget.app.image[0],
-            isNetworkImage: widget.app.isNetworkImage,
           ),
           _buildBottom(),
         ],

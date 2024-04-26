@@ -1,4 +1,5 @@
 import 'package:app/landing/landing_screen.dart';
+import 'package:app/landing/widgets/source_aware_image.dart';
 import 'package:app/utilities/custom_scroll_behavior.dart';
 import 'package:flutter/material.dart';
 
@@ -48,21 +49,7 @@ class InteractiveImageViewer extends StatelessWidget {
               shrinkWrap: true,
               physics: const ClampingScrollPhysics(),
               scrollDirection: Axis.horizontal,
-              children: List.generate(
-                  image.length,
-                  (index) => Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: Image.network(image[index], fit: BoxFit.fitHeight, loadingBuilder: (context, child, progress) {
-                          if (progress != null) {
-                            return const Center(
-                              child: CircularProgressIndicator(
-                                color: Colors.white70,
-                              ),
-                            );
-                          }
-                          return child;
-                        }),
-                      ))),
+              children: List.generate(image.length, (index) => SourceAwareImage(image: image[index], fit: BoxFit.fitHeight))),
         ),
       ),
     );
