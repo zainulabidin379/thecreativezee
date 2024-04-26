@@ -54,8 +54,10 @@ class InteractiveImageViewer extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: Image.network(image[index], fit: BoxFit.fitHeight, loadingBuilder: (context, child, progress) {
                           if (progress != null) {
-                            return const CircularProgressIndicator(
-                              color: Colors.white70,
+                            return const Center(
+                              child: CircularProgressIndicator(
+                                color: Colors.white70,
+                              ),
                             );
                           }
                           return child;
