@@ -88443,7 +88443,7 @@ A.agr.prototype={
 $0(){v.G.window.open("https://github.com/zainulabidin379","_blank")},
 $S:0}
 A.agt.prototype={
-$1(a){return this.a.BV(this.b,"assets/images/linkedin.png",a,new A.agq())},
+$1(a){return this.a.BV(this.b,"assets/images/linkedIn.png",a,new A.agq())},
 $S:122}
 A.agq.prototype={
 $0(){v.G.window.open("https://www.linkedin.com/in/thecreativezee/","_blank")},
